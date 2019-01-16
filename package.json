@@ -1,0 +1,22 @@
+{
+  "name": "webviewer-annotations-document-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run download-webviewer && npm run add-license",
+    "download-webviewer": "node scripts/download-webviewer.js",
+    "add-license": "node scripts/add-license.js",
+    "start": "node server/serve.js"
+  },
+  "author": "PDFTron Systems Inc.",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "btoa": "^1.2.1",
+    "download": "^7.1.0",
+    "express": "^4.16.4",
+    "fs-extra": "^7.0.1",
+    "multer": "^1.4.1",
+    "opn": "^5.4.0"
+  }
+}
