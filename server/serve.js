@@ -15,9 +15,9 @@ app.use('/client', express.static('client')); // For statically serving 'client'
 annotationHandler(app);
 
 // Serve the local PDF file 
-app.get('/server/webviewer-demo.pdf', (req, res) => {
+app.get('/server/demo.pdf', (req, res) => {
 	res.contentType('application/pdf');
-	res.sendFile(path.resolve(__dirname, './webviewer-demo.pdf'));
+	res.sendFile(path.resolve(__dirname, './demo.pdf'));
 });
 
 // Run server
