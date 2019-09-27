@@ -1,4 +1,4 @@
-// This file is to run a server in localhost:3000
+// This file is to run a server in localhost:3005
 // Code to handle annotations is in annotationHandler.js
 
 const path = require('path');
@@ -21,11 +21,11 @@ app.get('/server/demo.pdf', (req, res) => {
 });
 
 // Run server
-app.listen(3000, 'localhost', (err) => {
+app.listen(3005, 'localhost', (err) => {
 	if (err) {
 		console.error(err);
 	} else {
-    console.info(`Server is listening at http://localhost:3000/client/index.html`);
-    opn('http://localhost:3000/client/index.html');
+    console.info(`Server is listening at http://localhost:3005/client/index.html`);
+    opn('http://localhost:3005/client/index.html');
 	}
 });

@@ -1,5 +1,6 @@
 var viewerElement = document.getElementById('viewer');
-var viewer = new PDFTron.WebViewer({
+// var viewer = new PDFTron.WebViewer({
+var viewer = WebViewer({
   path: 'lib',
   initialDoc: '/server/demo.pdf',
 }, viewerElement).then(instance => {
