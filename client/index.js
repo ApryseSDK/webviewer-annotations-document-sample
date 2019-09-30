@@ -24,20 +24,21 @@ var viewer = WebViewer({
   // Make a POST request with blob data for a PDF with new annotations
   var saveDocument = function(filename) {
     return new Promise(function(resolve) {
-      var xfdfString = annotManager.exportAnnotations();
-      instance.docViewer.getDocument().getFileData({ xfdfString }).then(function(data) {
-        var arr = new Uint8Array(data);
-        var blob = new Blob([ arr ], { type: 'application/pdf' });
-        // FormData is used to send blob data through fetch
-        var formData = new FormData();
-        formData.append('blob', blob);
-        fetch(`/server/annotationHandler.js?filename=${filename}`, {
-          method: 'POST',
-          body: formData
-        }).then(function(res) {
-          if (res.status === 200) {
-            resolve();
-          }
+      annotManager.exportAnnotations().then(function(xfdfString) {
+        instance.docViewer.getDocument().getFileData({ xfdfString }).then(function(data) {
+          var arr = new Uint8Array(data);
+          var blob = new Blob([ arr ], { type: 'application/pdf' });
+          // FormData is used to send blob data through fetch
+          var formData = new FormData();
+          formData.append('blob', blob);
+          fetch(`/server/annotationHandler.js?filename=${filename}`, {
+            method: 'POST',
+            body: formData
+          }).then(function(res) {
+            if (res.status === 200) {
+              resolve();
+            }
+          });
         });
       });
     });
