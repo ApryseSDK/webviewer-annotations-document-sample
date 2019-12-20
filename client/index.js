@@ -1,5 +1,5 @@
 var viewerElement = document.getElementById('viewer');
-var viewer = WebViewer({
+WebViewer({
   path: 'lib',
   initialDoc: '/server/demo.pdf',
 }, viewerElement).then(instance => {
