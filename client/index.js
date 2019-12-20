@@ -1,7 +1,7 @@
 var viewerElement = document.getElementById('viewer');
 WebViewer({
   path: 'lib',
-  initialDoc: '/server/demo.pdf',
+  initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/demo.pdf',
 }, viewerElement).then(instance => {
   var annotManager = instance.docViewer.getAnnotationManager();
 
