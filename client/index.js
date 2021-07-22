@@ -3,8 +3,7 @@ WebViewer({
   path: 'lib',
   initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/demo.pdf',
 }, viewerElement).then(instance => {
-  var annotManager = instance.docViewer.getAnnotationManager();
-
+  const {documentViewer, annotationManager} = instance.Core.documentViewer;
   // Add a save button on header
   instance.setHeaderItems(function(header) {
     header.push({
@@ -19,13 +18,11 @@ WebViewer({
     });
   });
 
-
-
   // Make a POST request with blob data for a PDF with new annotations
   var saveDocument = function(filename) {
     return new Promise(function(resolve) {
-      annotManager.exportAnnotations().then(function(xfdfString) {
-        instance.docViewer.getDocument().getFileData({ xfdfString }).then(function(data) {
+      annotationManager.exportAnnotations().then(function(xfdfString) {
+        documentViewer.getDocument().getFileData({ xfdfString }).then(function(data) {
           var arr = new Uint8Array(data);
           var blob = new Blob([ arr ], { type: 'application/pdf' });
           // FormData is used to send blob data through fetch
