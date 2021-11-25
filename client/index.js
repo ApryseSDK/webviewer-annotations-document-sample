@@ -3,7 +3,7 @@ WebViewer({
   path: 'lib',
   initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/demo.pdf',
 }, viewerElement).then(instance => {
-  const {documentViewer, annotationManager} = instance.Core.documentViewer;
+  const {documentViewer, annotationManager} = instance.Core;
   // Add a save button on header
   instance.setHeaderItems(function(header) {
     header.push({
