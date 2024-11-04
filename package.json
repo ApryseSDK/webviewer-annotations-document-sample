@@ -16,6 +16,6 @@
     "opn": "^5.4.0"
   },
   "dependencies": {
-    "@pdftron/webviewer": "^8.0.0"
+    "@pdftron/webviewer": "^11.0.0"
   }
 }
