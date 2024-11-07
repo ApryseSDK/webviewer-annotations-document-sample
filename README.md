@@ -1,6 +1,6 @@
 # WebViewer annotations sample - using files and Node.js backend
 
-[WebViewer](https://www.pdftron.com/webviewer) is a powerful JavaScript-based PDF Library that's part of the [PDFTron PDF SDK](https://www.pdftron.com). It allows you to view and annotate PDF files on your web app with a fully customizable UI.
+[WebViewer](https://docs.apryse.com/documentation/web/) is a powerful JavaScript-based PDF Library that's part of the [Apryse SDK](https://apryse.com/). It allows you to view and annotate PDF files on your web app with a fully customizable UI.
 
 ![WebViewer](https://www.pdftron.com/downloads/pl/webviewer-ui.png)
 
@@ -13,7 +13,7 @@ Before you begin, make sure your development environment includes [Node.js](http
 ## Install
 
 ```
-git clone https://github.com/PDFTron/webviewer-annotations-document-sample.git
+git clone https://github.com/ApryseSDK/webviewer-annotations-document-sample.git
 cd webviewer-annotations-document-sample
 npm install
 ```
